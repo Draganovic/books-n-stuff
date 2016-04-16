@@ -1,0 +1,9 @@
+<h1> All Books</h1>
+
+<ul>
+<% @books.each do |book| %>
+<li>  <%= book.title %> </li>
+<li>  <%= book.author %> </li>
+<li>  <%= link_to image_tag(book.image, {class: "book_cover_link", id: "book_#{book.id}"}), book_path(book) %> </li>
+<% end %>
+</ul>
