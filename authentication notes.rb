@@ -1,0 +1,45 @@
+# /books/1
+# Harry Potter
+# Rating: .....
+# [Submit]
+
+# POST /books { rating: 5 } ratings#create
+
+def create
+  if current_user
+    # do rating stuff
+  else
+    # don't do rating stuff
+    # display error
+    # redirect to login path
+  end
+end
+
+# /////
+
+# ratings_controller.rb
+
+class RatingsController < AuthenticatedController
+  def create
+    # normal rating stuff
+  end
+end
+
+# application_controller.rb
+
+def check_logged_in
+  if !current_user
+    # error message
+    redirect_to login_path
+  end
+end
+
+def check_admin
+  if !current_user || !current_user.admin?
+    redirect_to login_path
+  end
+end
+
+class AuthenticatedController < ApplicationController
+  before_action :check_logged_in
+end
