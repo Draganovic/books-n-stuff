@@ -1,6 +1,9 @@
 <h1 id="title"><%= @book.title %></h1>
 
 <div class="book_info">
-  <%= @book.author %>
-  <%= @book.average_rating %>
+<ul>
+  <li> Author: <%= @book.author %></li>
+  <li> Rating: <%= @book.average_rating %></li>
+  <li> <%= link_to "Rate This Book", new_book_rating_path(@book) %></li>
+</ul>
 </div>

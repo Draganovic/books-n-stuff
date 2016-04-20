@@ -1,0 +1,5 @@
+<%= form_for ([@book, @rating]) do |f| %>
+  <%= f.label :score %>
+  <%= f.number_field :score %>
+  <%= f.submit %>
+<% end %>
