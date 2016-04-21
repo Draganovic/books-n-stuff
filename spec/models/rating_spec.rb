@@ -8,4 +8,8 @@ RSpec.describe Rating, type: :model do
 
     expect(rating.score).to eq 4
   end
+
+
+  it { should validate_inclusion_of(:score).in_range(0..5) }
+
 end

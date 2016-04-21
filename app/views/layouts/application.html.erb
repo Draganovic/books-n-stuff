@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
   <title>BooksNStuff</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -17,6 +19,5 @@
     <%= content_tag :div, msg, :class => "flash_#{name}" %>
   <% end %>
 <% end %>
-
 </body>
 </html>
