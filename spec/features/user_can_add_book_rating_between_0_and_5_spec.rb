@@ -9,12 +9,16 @@ RSpec.feature 'user can add book rating between 0 and 5' do
     rating1 = Rating.create!(score: 2, book_id: book.id)
     rating2 = Rating.create!(score: 4, book_id: book.id)
 
-    visit book_path(book)
+    visit login_path
 
+    fill_in "Username", with: user.username
+    fill_in "Password", with: "123"
+
+    click_on "Login"
+
+    visit book_path(book)
     expect(page).to have_content 3.0
     click_on "Rate This Book"
-
-    expect(page).to have_content ""
 
     fill_in "Score", with: 6
     click_on "Create Rating"
