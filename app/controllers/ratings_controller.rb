@@ -1,5 +1,5 @@
 class RatingsController < ApplicationController
-  before_action :authorize
+  before_action :rating_authorize
   def new
     @book = Book.find(params[:book_id])
     @rating = @book.ratings.new
