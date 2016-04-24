@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root to: 'static_pages#home'
 
-  resources :books, only: [:index, :show, :new, :create] do
+  resources :books, only: [:index, :show, :new, :create, :destroy] do
     resources :ratings, only: [:new, :create]
   end
   resources :users, only: [:new, :create, :show]
