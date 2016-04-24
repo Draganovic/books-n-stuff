@@ -28,6 +28,5 @@ RSpec.feature "admin can add a book" do
     within ".books" do
       expect(page).to have_content "Brave new world"
     end
-    save_and_open_page
   end
 end
