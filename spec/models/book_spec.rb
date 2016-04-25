@@ -22,6 +22,14 @@ RSpec.describe Book, type: :model do
 
         expect(book.average_rating).to be 2.3
       end
+
+      it "displays books in order" do
+        book1 = Book.create!(title: "c", author: "c author", image: "http://vignette3.wikia.nocookie.net/lotr/images/b/b8/Hobbit-cover.jpg/revision/latest?cb=20070706183816")
+        book2 = Book.create!(title: "a", author: "a author", image: "http://vignette3.wikia.nocookie.net/lotr/images/b/b8/Hobbit-cover.jpg/revision/latest?cb=20070706183816")
+        book3 = Book.create!(title: "b", author: "b author", image: "http://vignette3.wikia.nocookie.net/lotr/images/b/b8/Hobbit-cover.jpg/revision/latest?cb=20070706183816")
+
+        expect(Book.alphabetize).to eq [book2, book3, book1]
+      end
     end
   end
 end
