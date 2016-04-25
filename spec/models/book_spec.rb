@@ -19,7 +19,7 @@ RSpec.describe Book, type: :model do
         rating1 = Rating.create!(score: 2, book_id: book.id)
         rating2 = Rating.create!(score: 2, book_id: book.id)
         rating3 = Rating.create!(score: 3, book_id: book.id)
-        
+
         expect(book.average_rating).to be 2.3
       end
     end

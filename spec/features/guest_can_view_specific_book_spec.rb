@@ -7,15 +7,14 @@ RSpec.feature 'guest can view all books' do
 
     visit books_path
     first("a").click
-
-    expect(current_path).to eq book_path(book1)
+    expect(current_path).to eq book_path(book2)
 
     within 'h1#title' do
-      expect(page).to have_content book1.title
+      expect(page).to have_content book2.title
     end
     within '.book_info' do
-      expect(page).to have_content book1.author
-      expect(page).to have_content book1.average_rating
+      expect(page).to have_content book2.author
+      expect(page).to have_content book2.average_rating
     end
   end
 end
