@@ -5,7 +5,7 @@
   <li> Author: <%= @book.author %></li>
   <li> Rating: <%= @book.average_rating %></li>
   <li> <%= link_to "Rate This Book", new_book_rating_path(@book) %></li>
-  <% if current_user.admin? %>
+  <% if current_user && current_user.admin? %>
     <li> <%= link_to "Delete", book_path(@book), method: :delete %> </li>
   <% end %>
 </ul>
